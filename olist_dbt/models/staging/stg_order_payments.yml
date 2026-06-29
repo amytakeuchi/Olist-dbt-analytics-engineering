@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_order_payments
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: payment_sequence_number
+        tests: 
+          - unique
+          - not_null
+      - name: payment_type
+          - unique
+          - not_null
+      - name: number_of_installments
+          - unique
+          - not_null
+      - name: payment_amount
+          - unique
+          - not_null
+      

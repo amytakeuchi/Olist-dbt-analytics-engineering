@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: orders_raw
+    database: olist-analytics-project-497300
+    schema: orders_raw
+
+    tables:
+      - name: customers_raw
+      - name: order_items_raw
+      - name: orders_raw
+      - name: products_raw
+      - name: sellers_raw
+      - name: category_name_translation_raw
+      - name: order_payments_raw

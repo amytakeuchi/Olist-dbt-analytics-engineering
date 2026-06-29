@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_order_revenue
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: item_revenue
+        tests: 
+    
+          - not_null
+      - name: freight_revenue
+        tests: 
+       
+          - not_null
+      - name: total_revenue
+        tests: 
+     
+          - not_null

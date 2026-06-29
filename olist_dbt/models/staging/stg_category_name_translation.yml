@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_category_name_translation
+    columns:
+      - name: category_portuguese
+        tests:
+          - unique
+          - not_null
+      - name: category_english
+        tests: 
+          - unique
+          - not_null

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+dbt_env/
+
+# macOS
+.DS_Store
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Environment variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/

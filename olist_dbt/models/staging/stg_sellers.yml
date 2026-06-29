@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_sellers
+    columns:
+      - name: seller_id
+        tests:
+          - unique
+          - not_null
+      - name: seller_city
+        tests: 
+          - unique
+          - not_null
+      - name: seller_state
+          - unique
+          - not_null
+      

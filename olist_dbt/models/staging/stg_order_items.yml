@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: number_of_items
+        tests: 
+          - unique
+          - not_null
+      - name: product_id
+          - unique
+          - not_null
+      - name: seller_id
+          - unique
+          - not_null
+      - name: ship_by
+          - unique
+          - not_null
+      - name: date_ship_by
+          - unique
+          - not_null
+      - name: price
+          - unique
+          - not_null
+      - name: freight_value
+          - unique
+          - not_null

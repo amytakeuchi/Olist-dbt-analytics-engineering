@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests: 
+          - unique
+          - not_null
+      - name: order_status
+          - unique
+          - not_null
+      - name: purchased_at 
+          - unique
+          - not_null
+      - name: delivered_at
+          - unique
+          - not_null
+      - name: purchased_date
+          - unique
+          - not_null
+      - name: delivered_date
+          - unique
+          - not_null
+      - name: estimated_delivery_date
+          - unique
+          - not_null
