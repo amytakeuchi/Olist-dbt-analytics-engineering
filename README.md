@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This project demonstrates an end-to-end Analytics Engineering workflow using the Olist Ecommerce Dataset and a modern data stack centered around dbt and Google BigQuery.
 
@@ -21,7 +21,7 @@ This project follows Analytics Engineering best practices:
 
 ---
 
-## 🎯 Business Problem
+## Business Problem
 
 Operational ecommerce databases are optimized for transactions, not analytics.
 
@@ -42,7 +42,7 @@ This project solves these issues by creating an analytics warehouse that enables
 
 ---
 
-## 🏗️ Data Architecture
+## Data Architecture
 
 ```text
 Raw Data (BigQuery)
@@ -72,7 +72,7 @@ olist_dev
 
 ---
 
-## 🧰 Technology Stack
+## Technology Stack
 
 | Layer           | Tool                    |
 | --------------- | ----------------------- |
@@ -85,7 +85,7 @@ olist_dev
 
 ---
 
-## 📦 Source Dataset
+## Source Dataset
 
 The project uses the Olist Ecommerce Dataset containing:
 
@@ -111,7 +111,7 @@ orders_raw.sellers_raw
 
 ---
 
-# 🔄 dbt Project Structure
+# dbt Project Structure
 
 ```text
 olist_dbt/
@@ -150,7 +150,7 @@ olist_dbt/
 
 ---
 
-# 🧱 Data Modeling Strategy
+# Data Modeling Strategy
 
 ## Staging Layer (`stg_*`)
 
@@ -466,7 +466,7 @@ dbt docs serve
 
 ---
 
-# 📌 Key Design Decisions
+# Key Design Decisions
 
 ### Layered Architecture
 
@@ -505,7 +505,7 @@ Mart models:
 
 ---
 
-# 🚀 Future Enhancements
+# Future Enhancements
 
 Planned improvements:
 
@@ -519,7 +519,7 @@ Planned improvements:
 
 ---
 
-# 📚 Key Analytics Engineering Concepts Demonstrated
+# Key Analytics Engineering Concepts Demonstrated
 
 * Data Modeling
 * Star Schema Design
@@ -533,7 +533,7 @@ Planned improvements:
 
 ---
 
-# 👤 Author
+# Author
 
 **Asami Takeuchi**
 
