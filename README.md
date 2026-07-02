@@ -539,9 +539,6 @@ Planned improvements:
 
 Analytics | Data Science | Analytics Engineering
 
-LinkedIn: [Add Link]
-
-GitHub: [Add Link]
 
 ---
 
