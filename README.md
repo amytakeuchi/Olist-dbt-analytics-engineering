@@ -95,8 +95,6 @@ The project uses the Olist Ecommerce Dataset containing:
 * Payments
 * Products
 * Sellers
-* Reviews
-* Geolocation
 
 ### Raw Tables
 
@@ -119,28 +117,30 @@ olist_dbt/
 ├── models/
 │
 ├── staging/
-│   ├── stg_orders.sql
+│   ├── stg_category_name_translation.sql
 │   ├── stg_customers.sql
 │   ├── stg_order_items.sql
-│   ├── stg_payments.sql
+│   ├── stg_order_payments.sql
+│   ├── stg_orders.sql
 │   ├── stg_products.sql
 │   └── stg_sellers.sql
 │
 ├── intermediate/
-│   ├── int_orders_enriched.sql
-│   ├── int_order_revenue.sql
-│   ├── int_order_payments.sql
+│   ├── int_customer_lifetime_value.sql
+│   ├── int_customer_orders.sql
+│   ├── int_deliver_metrics.sql
 │   ├── int_order_items_enriched.sql
-│   └── int_customer_orders.sql
+│   └── int_order_revenue.sql
 │
 ├── marts/
-│   ├── fct_orders.sql
-│   ├── fct_revenue.sql
-│   ├── fct_product_sales.sql
-│   ├── fct_category_performance.sql
 │   ├── dim_customers.sql
 │   ├── dim_products.sql
-│   └── dim_sellers.sql
+│   ├── dim_sellers.sql
+│   ├── fct_customer_metrics.sql
+│   ├── fct_delivery_performance.sql
+│   ├── fct_orders.sql
+│   ├── fct_sales.sql
+│   └──  fct_seller_performance.sql
 │
 ├── tests/
 ├── macros/
@@ -189,17 +189,13 @@ Examples:
 
 Calculates:
 
-* Item Revenue
-* Freight Revenue
-* Gross Revenue
+* Item Revenue: Total number_of_items*price
+* Freight Revenue: Total freight_revenue
+* Gross Revenue: Total number_of_items*price + Total freight_revenue
 
 ### int_order_items_enriched
 
-Combines:
-
-* Products
-* Categories
-* Revenue calculations
+Combines: Orders, Sellers, Categories, and Revenue calculations
 
 ### int_customer_orders
 
@@ -233,47 +229,56 @@ Grain:
 Contains:
 
 * Order details
-* Customer information
-* Revenue
-* Delivery metrics
+* Customer and Seller Ids
+* Revenue metrics
 
 ---
 
-#### fct_revenue
+#### fct_sales
 
 Revenue-focused fact table containing:
 
 * Gross Revenue
-* Item Revenue
-* Freight Revenue
+* Number of Items
+* Delivery information
 
 ---
 
-#### fct_product_sales
+#### fct_delivery_performance
 
 Business question:
 
-> Which products generate the most revenue?
+> What's the delivery performance?
 
 Metrics:
 
-* Orders
-* Revenue
-* Average Selling Price
+* Estimated and actual delivery time/date
 
 ---
 
-#### fct_category_performance
+#### fct_seller_performance
 
 Business question:
 
-> Which product categories drive revenue?
+> Which sellers achieving revenue?
 
 Metrics:
 
 * Revenue
 * Orders
-* Average Order Value
+* Cancellation
+* Average delivery time
+
+---
+
+#### fct_customer_metrics
+
+Metrics:
+
+* Total orders
+* Lifetime Revenue
+* Average order value
+* Order dataetime
 
 ---
 
@@ -285,12 +290,8 @@ One row per customer.
 
 Includes:
 
-* First Order Date
-* Last Order Date
-* Total Orders
-* Lifetime Revenue
-* Average Order Value
-* Repeat Customer Flag
+* Location
+* First/Last Order Date
 
 ---
 
@@ -312,7 +313,6 @@ One row per seller.
 Includes:
 
 * Seller Information
-* Seller Performance Metrics
 
 ---
 
